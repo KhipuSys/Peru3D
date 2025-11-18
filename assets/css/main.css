@@ -1,0 +1,207 @@
+/* ===================================
+   Variables CSS - Tema estilo Apple
+   =================================== */
+:root {
+    /* Colores principales */
+    --color-primary: #0071e3;
+    --color-primary-dark: #0077ed;
+    --color-secondary: #86868b;
+    --color-text: #1d1d1f;
+    --color-text-light: #86868b;
+    --color-background: #ffffff;
+    --color-background-alt: #f5f5f7;
+    --color-border: #d2d2d7;
+    
+    /* Tipografía */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-size-base: 17px;
+    --font-size-small: 14px;
+    --font-size-large: 21px;
+    --font-size-h1: 56px;
+    --font-size-h2: 48px;
+    --font-size-h3: 32px;
+    --font-weight-normal: 400;
+    --font-weight-medium: 400;
+    --font-weight-semibold: 400;
+    --font-weight-bold: 400;
+    
+    /* Espaciado */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 48px;
+    --spacing-xl: 80px;
+    --spacing-xxl: 120px;
+    
+    /* Posición horizontal del menú en el header */
+    --nav-menu-left: 50%; /* 50% = centrado, 0% = izquierda, 100% = derecha, o usa píxeles como 20px */
+    
+    /* Ajuste fino de posición (offset desde el centro) */
+    --nav-menu-offset: 0; /* 0 = sin offset, valores negativos mueven a la izquierda, positivos a la derecha */
+    
+    /* Posición vertical del menú en el header */
+    --nav-menu-top: 50%; /* 50% = centrado verticalmente */
+    
+    /* Transiciones */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Sombras */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+    
+    /* Bordes */
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+}
+
+/* ===================================
+   Reset y Base
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: var(--font-size-base);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: 1.47059;
+    font-weight: 400;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===================================
+   Utilidades
+   =================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section__title {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.003em;
+}
+
+.section__subtitle {
+    font-size: var(--font-size-large);
+    color: var(--color-text-light);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    font-weight: var(--font-weight-normal);
+}
+
+/* ===================================
+   Botones
+   =================================== */
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    text-align: center;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+.btn--primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn--primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn--secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn--small {
+    padding: 10px 20px;
+    font-size: var(--font-size-small);
+}
+
+/* ===================================
+   Secciones Generales
+   =================================== */
+main {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    padding: var(--spacing-xxl) 0;
+}
+
+/* ===================================
+   Animaciones
+   =================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ===================================
+   Scrollbar Personalizada
+   =================================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-background-alt);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-secondary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-light);
+}
+
